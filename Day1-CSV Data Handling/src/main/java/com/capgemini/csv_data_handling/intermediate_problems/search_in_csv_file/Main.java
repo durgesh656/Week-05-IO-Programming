@@ -1,0 +1,22 @@
+package com.capgemini.csv_data_handling.intermediate_problems.search_in_csv_file;
+
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        String filePath = "employees.csv"; // Provide the correct path
+        List<Employee> employees = CSVReader.readCSV(filePath);
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+        System.out.println();
+        String searchName = "Durgesh";
+        Employee employee = CSVReader.searchEmployee(filePath, searchName);
+        if (employee != null) {
+            System.out.println("Employee Found: " + employee);
+        } else {
+            System.out.println("Employee not found.");
+        }
+    }
+
+}
